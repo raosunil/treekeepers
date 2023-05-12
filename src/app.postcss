@@ -1,0 +1,105 @@
+@import url('https://rsms.me/inter/inter.css');
+html {
+	font-family: 'Inter', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	html {
+		font-family: 'Inter', sans-serif;
+	}
+}
+/* Write your global styles here - in PostCSS syntax */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+body * + * {
+	margin-top: 1em;
+}
+
+.container {
+	display: flex;
+	max-width: 1080px;
+	writing-mode: horizontal-tb;
+	margin: 0 auto;
+}
+
+.main {
+	float: left;
+	background-color: #fff;
+	border-radius: 0.5em;
+}
+
+h1 {
+	@apply text-6xl;
+	@apply font-bold;
+	margin-bottom: 0.3em;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border: 1px solid black;
+	padding: 0.3em 0.5em;
+}
+
+table {
+	width: 100%;
+}
+
+@media (max-width: 30em) {
+	table,
+	thead,
+	tbody,
+	tr,
+	th,
+	td {
+		display: block;
+	}
+	tr {
+		margin-bottom: 1em;
+	}
+}
+
+.portfolio {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	grid-auto-rows: 1fr;
+	grid-gap: 1em;
+}
+
+.portfolio > figure {
+	margin: 0;
+}
+
+.portfolio img {
+	max-width: 100%;
+}
+
+.portfolio figcaption {
+	padding: 0.3em 0.8em;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-align: right;
+}
+/*
+reusing-styles
+*/
+@layer components {
+	.nav-anchor {
+		@apply block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4;
+	}
+}
