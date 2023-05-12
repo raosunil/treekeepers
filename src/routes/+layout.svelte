@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "../app.postcss";
 	import { writable } from '$lib/store';
-	const isLoggedIn = writable('loggedIn', '');
+	const isLoggedIn = writable('loggedIn', 'false');
 </script>
 
 <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">

@@ -2,7 +2,7 @@
   import { writable } from '$lib/store';
   import type { ActionData } from './$types';
   export let form: ActionData;
-	const isLoggedIn = writable('loggedIn', '');
+	const isLoggedIn = writable('loggedIn', 'false');
   if (form?.success) {
     isLoggedIn.set('true');
   }  
@@ -69,7 +69,7 @@
         </div>
       </form>
     </div>
-    {:else}
+    {:else if $isLoggedIn === 'true'}
     <div>
       <button
 		class="block mt-0 ml-1.5 bg-orange-500 enabled:hover:border-gray-400 disabled:opacity-75 rounded-full w-2/3"
