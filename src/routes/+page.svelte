@@ -28,12 +28,12 @@
       <form method="POST">
         <!--E-mail input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="email" name="email" type="email" placeholder="Email" aria-label="Email">
+          <input class="appearance-none bg-transparent border-none w-full text-amber-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="email" name="email" type="email" placeholder="Email" aria-label="Email">
         </div>
 
         <!--Password input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="password" name="password" type="password" placeholder="Password" aria-label="Password">
+          <input class="appearance-none bg-transparent border-none w-full text-amber-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="password" name="password" type="password" placeholder="Password" aria-label="Password">
         </div>
 
         <!--Sign in button-->
@@ -74,10 +74,9 @@
     grid-template-areas:
       "title title"
       "nav   nav"
-      "main  aside1"
-      "main  aside2";
+      "main  aside1";
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
     grid-gap: 1.5em;
     max-width: 1080px;
     margin: 0 auto;
