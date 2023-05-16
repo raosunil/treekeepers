@@ -2,7 +2,7 @@
   import { writable } from '$lib/store';
   import type { ActionData } from './$types';
   export let form: ActionData;
-	const isLoggedIn = writable('loggedIn', '');
+	const isLoggedIn = writable('loggedIn', 'false');
   if (form?.success) {
     isLoggedIn.set('true');
   }  
@@ -33,7 +33,7 @@
 
         <!--Password input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="password" name="password" type="text" placeholder="Password" aria-label="Password">
+          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="password" name="password" type="password" placeholder="Password" aria-label="Password">
         </div>
 
         <!--Sign in button-->
@@ -46,7 +46,7 @@
         </div>
       </form>
     </div>
-    {:else if $isLoggedIn === 'false'}
+    {:else if $isLoggedIn === 'true'}
     <div>
       <button
 		class="block mt-0 ml-1.5 bg-orange-500 enabled:hover:border-gray-400 disabled:opacity-75 rounded-full w-2/3"
