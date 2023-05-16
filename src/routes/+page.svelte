@@ -2,7 +2,7 @@
   import { writable } from '$lib/store';
   import type { ActionData } from './$types';
   export let form: ActionData;
-	const isLoggedIn = writable('loggedIn', 'false');
+	const isLoggedIn = writable('loggedIn', '');
   if (form?.success) {
     isLoggedIn.set('true');
   }  
@@ -28,35 +28,12 @@
       <form method="POST">
         <!--E-mail input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-          <input
-            type="email"
-            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-            id="exampleInputEmail2"
-            name="email"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-          <label
-            for="exampleInputEmail2"
-            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-300 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-            >Email address</label
-          >
+          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="email" name="email" type="email" placeholder="Email" aria-label="Email">
         </div>
 
         <!--Password input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-          <input
-            type="password"
-            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-            id="exampleInputPassword2"
-            name="password"
-            placeholder="Password"
-          />
-          <label
-            for="exampleInputPassword2"
-            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-300 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-            >Password</label
-          >
+          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="password" name="password" type="text" placeholder="Password" aria-label="Password">
         </div>
 
         <!--Sign in button-->
@@ -69,7 +46,7 @@
         </div>
       </form>
     </div>
-    {:else if $isLoggedIn === 'true'}
+    {:else if $isLoggedIn === 'false'}
     <div>
       <button
 		class="block mt-0 ml-1.5 bg-orange-500 enabled:hover:border-gray-400 disabled:opacity-75 rounded-full w-2/3"
