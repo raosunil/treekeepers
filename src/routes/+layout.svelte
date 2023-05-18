@@ -15,8 +15,10 @@
 			<a href="/about" class="nav-anchor">About</a>
 		</div>
 		<div class="flex w-full ml-28 mt-1 items-center justify-between">
-			  <h5 class="text-3xl text-neutral-800 dark:text-neutral-200"
-				>Treekeepers of Washington County</h5>
+			 
+		  <div class="flex flex-wrap items-center max-w-[800px]">
+			<h5 class="text-3xl text-neutral-800 dark:text-neutral-200"
+			>Treekeepers of Washington County</h5>
 		  </div>
 	</div>
 </nav>
