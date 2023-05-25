@@ -22,7 +22,7 @@
 
 	async function getPokemonImages() {
 		try {
-			const url = `https://pokeapi.co/api/v2/pokemon/?limit=10`;
+			const url = `https://pokeapi.co/api/v2/pokemon/?limit=7`;
 			const response = await fetch(url, {
 				method: 'GET',
 				headers: {
